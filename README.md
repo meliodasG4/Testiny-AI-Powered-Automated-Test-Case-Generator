@@ -19,7 +19,6 @@ Testiny is an AI-powered automated test case generator for web applications. It 
 
 ## Demo
 
-![Demo video : ""C:\Users\user\Downloads\Capture d'écran 2026-01-19 170345.png"")
 
 Watch a full demo presentation here: [Project Presentation]([https://your-presentation-link](https://www.canva.com/design/DAG7MrHRl8E/m2ZGSJHudRp3bLpG7sx9bg/edit?utm_content=DAG7MrHRl8E&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton))
 
