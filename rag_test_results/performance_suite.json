@@ -1,0 +1,64 @@
+{
+  "suite_name": "performance",
+  "tests": [
+    {
+      "id": "PERF-001",
+      "name": "Homepage & Category Browsing Load Test",
+      "description": "Simulate a high volume of concurrent users browsing the homepage and navigating through various product categories to assess page load times, resource optimization, and caching effectiveness.",
+      "steps": [
+        "Simulate N concurrent users accessing the homepage: https://demo.nopcommerce.com/",
+        "Each user then navigates to a popular category page, e.g., 'Computers' (https://demo.nopcommerce.com/computers) or 'Electronics' (https://demo.nopcommerce.com/electronics).",
+        "Monitor network requests for static assets (images, CSS, JS) to verify caching headers and resource sizes.",
+        "Repeat browsing actions (e.g., navigating to subcategories like 'Desktops' or 'Cell phones') for a defined duration (e.g., 15-30 minutes)."
+      ],
+      "expected_result": "Average homepage load time should be less than 3 seconds. Average category page load time should be less than 5 seconds. Server response times should remain stable, and CPU/memory utilization should stay within acceptable thresholds. Effective caching should be observed for static assets (e.g., 304 Not Modified responses for repeat requests).",
+      "priority": "high",
+      "suite_type": "performance"
+    },
+    {
+      "id": "PERF-002",
+      "name": "Concurrent Product Search & Detail View Load Test",
+      "description": "Evaluate the performance of the search functionality and product detail page loading under concurrent user load, focusing on API response times and database query efficiency.",
+      "steps": [
+        "Simulate N concurrent users.",
+        "Each user performs a search using the 'q' input field (e.g., searching for 'computer', 'phone', or 'book') and clicks the 'SEARCH' button.",
+        "After receiving search results, each user clicks on a product link from the results (e.g., 'Apple MacBook Pro' or 'HTC One M8 Android L 5.0 Lollipop') to view its detail page.",
+        "Repeat the search and product view actions for a defined duration (e.g., 10-20 minutes)."
+      ],
+      "expected_result": "Average search API response time should be less than 500 milliseconds. Average product detail page load time should be less than 4 seconds. Database query times for search and product retrieval should remain within acceptable limits, and no search-related errors or timeouts should occur under load.",
+      "priority": "high",
+      "suite_type": "performance"
+    },
+    {
+      "id": "PERF-003",
+      "name": "High Volume User Registration & Login Spike Test",
+      "description": "Assess the system's ability to handle a sudden surge of new user registrations and subsequent logins, focusing on database write/read performance and authentication API response times.",
+      "steps": [
+        "Simulate N concurrent users.",
+        "Each user navigates to the 'Register' page (https://demo.nopcommerce.com/register).",
+        "Each user fills out the registration form with unique data (FirstName, LastName, Email, Password, ConfirmPassword) and clicks the 'REGISTER' button.",
+        "Upon successful registration, each user navigates to the 'Log in' page (https://demo.nopcommerce.com/login).",
+        "Each user attempts to log in using their newly created credentials (Email, Password) and clicks the 'LOG IN' button.",
+        "Repeat this cycle for a defined number of users or duration."
+      ],
+      "expected_result": "Average registration API response time should be less than 1 second. Average login API response time should be less than 800 milliseconds. Database write operations for new user accounts and read operations for login should complete without significant latency. No registration or login failures should occur due to concurrency issues.",
+      "priority": "high",
+      "suite_type": "performance"
+    },
+    {
+      "id": "PERF-004",
+      "name": "Concurrent Shopping Cart & Wishlist Operations Load Test",
+      "description": "Measure the performance of adding items to the shopping cart and wishlist under concurrent user activity, focusing on API response times and database consistency for user-specific data.",
+      "steps": [
+        "Simulate N concurrent logged-in users (prerequisite: users are already registered and logged in, or include login steps from PERF-003).",
+        "Each user navigates to various product pages (e.g., 'Build your own computer' - https://demo.nopcommerce.com/build-your-own-computer, 'Apple MacBook Pro' - https://demo.nopcommerce.com/apple-macbook-pro).",
+        "Each user clicks the 'ADD TO CART' button for one or more products.",
+        "A subset of users also clicks the 'Add to wishlist' button for selected products.",
+        "Repeat these actions for different products or the same product for a defined duration (e.g., 15-30 minutes)."
+      ],
+      "expected_result": "Average 'ADD TO CART' API response time should be less than 700 milliseconds. Average 'Add to wishlist' API response time should be less than 600 milliseconds. Shopping cart and wishlist updates in the database should be fast, consistent, and accurate. No data corruption or incorrect quantities/items should be observed in carts/wishlists under load.",
+      "priority": "high",
+      "suite_type": "performance"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "suite_name": "cross_browser",
+  "tests": [
+    {
+      "id": "CBT-001",
+      "name": "Newsletter Subscription Functionality and Rendering",
+      "description": "Verify the newsletter subscription form's rendering consistency, input field behavior, and successful submission across Chrome, Firefox, and Edge.",
+      "steps": [
+        "Navigate to the homepage (https://demo.nopcommerce.com).",
+        "Locate the 'NewsLetterEmail' input field (placeholder: 'Enter your email here...').",
+        "Enter a valid email address (e.g., 'test@example.com') into the field.",
+        "Observe the input field's styling (borders, focus state, placeholder text) for rendering consistency.",
+        "Click the 'SUBSCRIBE' button.",
+        "Observe any client-side validation messages or the success/failure message after submission for JavaScript compatibility."
+      ],
+      "expected_result": "The 'NewsLetterEmail' input field and 'SUBSCRIBE' button should render consistently across Chrome, Firefox, and Edge, maintaining their intended CSS styles (e.g., borders, padding, font). Placeholder text should be visible and correctly aligned. Entering an email and clicking 'SUBSCRIBE' should trigger the expected submission process (e.g., display a success message or an error if invalid) without visual glitches or JavaScript errors in any browser.",
+      "priority": "high",
+      "suite_type": "cross_browser"
+    },
+    {
+      "id": "CBT-002",
+      "name": "Product Search Bar Functionality and Results Rendering",
+      "description": "Test the search bar's input behavior, button click, and the rendering of the search results page across Chrome, Firefox, and Edge.",
+      "steps": [
+        "Navigate to the homepage (https://demo.nopcommerce.com).",
+        "Locate the search input field (name: 'q', placeholder: 'Search store').",
+        "Enter a search term (e.g., 'computer') into the field.",
+        "Observe the input field's styling and text entry for rendering consistency.",
+        "Click the 'SEARCH' button.",
+        "Verify that the user is redirected to the search results page (e.g., URL changes to /search?q=computer).",
+        "Observe the layout and rendering of the search results (e.g., product listings, filters, pagination) for CSS support and rendering consistency."
+      ],
+      "expected_result": "The search input field and 'SEARCH' button should render consistently across Chrome, Firefox, and Edge. Entering text and clicking 'SEARCH' should successfully navigate to the search results page. The search results page, including product listings, images, and any associated UI elements, should display correctly and without layout issues (e.g., overlapping elements, broken images, misaligned text) in all specified browsers.",
+      "priority": "high",
+      "suite_type": "cross_browser"
+    },
+    {
+      "id": "CBT-003",
+      "name": "User Registration Form Elements and Submission",
+      "description": "Evaluate the rendering and functionality of various form elements (radio, text, password, checkbox) and the form submission process on the registration page across Chrome, Firefox, and Edge.",
+      "steps": [
+        "Navigate to the registration page (https://demo.nopcommerce.com/register?returnUrl=%2F).",
+        "Observe the rendering of the 'Gender' radio buttons, 'FirstName', 'LastName', 'Email', 'Company' text fields, 'Password', 'ConfirmPassword' password fields, and the 'NewsLetterSubscriptions[0].IsActive' checkbox for CSS support and rendering consistency.",
+        "Interact with each input type: select a radio button, enter text into text fields, enter passwords, check/uncheck the checkbox. Observe the visual feedback and styling of these interactions for JavaScript compatibility and rendering.",
+        "Fill in all required fields with valid data.",
+        "Click the 'REGISTER' button.",
+        "Verify that the form submits successfully and the user is redirected to the expected post-registration page (e.g., 'Your registration completed') without JavaScript errors."
+      ],
+      "expected_result": "All form elements (radio buttons, text fields, password fields, checkbox) on the registration page should render and function consistently across Chrome, Firefox, and Edge. Placeholder text, input borders, focus states, and selected states should appear as designed. Client-side validation (if any) should work identically. Successful form submission should occur without errors or visual discrepancies in any of the target browsers.",
+      "priority": "high",
+      "suite_type": "cross_browser"
+    },
+    {
+      "id": "CBT-004",
+      "name": "Main Navigation Menu and Category Link Rendering",
+      "description": "Check the rendering consistency, hover effects, and click functionality of the main navigation menu and category links across Chrome, Firefox, and Edge.",
+      "steps": [
+        "Navigate to the homepage (https://demo.nopcommerce.com).",
+        "Observe the main navigation menu (e.g., 'Computers', 'Electronics', 'Apparel') for overall layout and CSS support.",
+        "Hover over main category links (e.g., 'Computers') and observe any dropdown menus or hover effects for rendering consistency and JavaScript compatibility.",
+        "Click on a main category link (e.g., 'Computers').",
+        "Verify that the user is navigated to the correct category page (https://demo.nopcommerce.com/computers).",
+        "Observe the layout and content of the category page for rendering consistency and CSS support."
+      ],
+      "expected_result": "The main navigation menu and its category links should render consistently across Chrome, Firefox, and Edge, maintaining their intended CSS styles (e.g., alignment, spacing, fonts). Hover effects (if any) should function smoothly and display correctly. Clicking on a category link should correctly navigate to the respective page, and the page content should display without layout or styling issues (e.g., broken images, misaligned text, overlapping elements) in all specified browsers.",
+      "priority": "high",
+      "suite_type": "cross_browser"
+    }
+  ]
+}

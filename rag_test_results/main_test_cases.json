@@ -1,0 +1,291 @@
+{
+  "test_cases": [
+    {
+      "id": "TC001",
+      "name": "Search for a valid product on homepage",
+      "type": "positive",
+      "priority": "high",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the search input field with placeholder 'Search store' (name: 'q')",
+        "3. Enter 'computer' into the search field",
+        "4. Click the 'SEARCH' button"
+      ],
+      "expected_result": "The search results page should load, displaying products related to 'computer'."
+    },
+    {
+      "id": "TC002",
+      "name": "Subscribe to newsletter with a valid email",
+      "type": "positive",
+      "priority": "medium",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the newsletter email input field (name: 'NewsLetterEmail')",
+        "3. Enter a valid email address (e.g., 'test@example.com') into the field",
+        "4. Click the 'SUBSCRIBE' button"
+      ],
+      "expected_result": "A success message for newsletter subscription should be displayed (e.g., 'Thank you for subscribing')."
+    },
+    {
+      "id": "TC003",
+      "name": "Successful user registration",
+      "type": "positive",
+      "priority": "high",
+      "test_technique": "state transition",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Click the 'Register' link",
+        "3. On the registration page, select a 'Gender' radio button",
+        "4. Fill in 'FirstName', 'LastName', 'Email' with unique valid data",
+        "5. Enter a strong 'Password' and confirm it in 'ConfirmPassword'",
+        "6. Click the 'REGISTER' button"
+      ],
+      "expected_result": "The user should be successfully registered and redirected to a registration success page or the homepage while logged in."
+    },
+    {
+      "id": "TC004",
+      "name": "Navigate to a main category page",
+      "type": "positive",
+      "priority": "high",
+      "test_technique": "state transition",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Click on the 'Computers' link in the main navigation"
+      ],
+      "expected_result": "The 'Computers' category page (https://demo.nopcommerce.com/computers) should load successfully, displaying relevant products."
+    },
+    {
+      "id": "TC005",
+      "name": "Add a product to the shopping cart",
+      "type": "positive",
+      "priority": "high",
+      "test_technique": "behavioral testing",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/build-your-own-computer (or any product page)",
+        "2. Configure product options if available (e.g., processor, RAM)",
+        "3. Click the 'ADD TO CART' button"
+      ],
+      "expected_result": "The product should be added to the shopping cart, and the 'Shopping cart (X)' link should update to reflect the new item count. A success notification should appear."
+    },
+    {
+      "id": "TC006",
+      "name": "Login with valid credentials",
+      "type": "positive",
+      "priority": "high",
+      "test_technique": "state transition",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Click the 'Log in' link",
+        "3. On the login page, enter a valid registered email address (assuming input fields for email/password exist, as they are not in the provided JSON)",
+        "4. Enter the corresponding valid password",
+        "5. Click the 'LOG IN' button"
+      ],
+      "expected_result": "The user should be successfully logged in and redirected to the homepage or 'My account' page."
+    },
+    {
+      "id": "TC007",
+      "name": "Vote in the poll",
+      "type": "positive",
+      "priority": "medium",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the poll section",
+        "3. Select one of the radio buttons for 'pollanswers-1'",
+        "4. Click the 'VOTE' button"
+      ],
+      "expected_result": "The poll results should be displayed, and the selected option's vote count should increase."
+    },
+    {
+      "id": "TC008",
+      "name": "Access empty wishlist page",
+      "type": "positive",
+      "priority": "medium",
+      "test_technique": "behavioral testing",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Click the 'Wishlist (0)' link"
+      ],
+      "expected_result": "The wishlist page (https://demo.nopcommerce.com/wishlist) should load, displaying a message indicating that the wishlist is empty."
+    },
+    {
+      "id": "TC009",
+      "name": "Search with maximum allowed characters",
+      "type": "positive",
+      "priority": "medium",
+      "test_technique": "boundary value analysis",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the search input field (name: 'q')",
+        "3. Enter a search term with the maximum allowed characters (e.g., 100 characters, if the limit is 100, like 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')",
+        "4. Click the 'SEARCH' button"
+      ],
+      "expected_result": "The search should process the long query without error, displaying results if any match, or a 'no results' message."
+    },
+    {
+      "id": "TC010",
+      "name": "Add product with quantity exceeding maximum",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "boundary value analysis",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/build-your-own-computer",
+        "2. Locate the quantity input field",
+        "3. Enter 999 as quantity",
+        "4. Click 'ADD TO CART'"
+      ],
+      "expected_result": "no erreur , prodeuct added to cart."
+    },
+    {
+      "id": "TC011",
+      "name": "Add product with extremely large quantity",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "boundary value analysis",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/build-your-own-computer",
+        "2. Locate the quantity input field",
+        "3. Enter 100000000000 as quantity",
+        "4. Click 'ADD TO CART'"
+      ],
+    "expected_result": "An error message should appear: 'Quantity should'nt pass 10000'."
+  },
+    {
+      "id": "TC012",
+      "name": "Newsletter subscription with invalid email format",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "boundary value analysis",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the newsletter email input field (name: 'NewsLetterEmail')",
+        "3. Enter an invalid email address (e.g., 'invalid-email', 'test@', 'test@.com')",
+        "4. Click the 'SUBSCRIBE' button"
+      ],
+      "expected_result": "An error message indicating an invalid email format should be displayed (e.g., 'Wrong email'). The subscription should not proceed."
+    },
+    {
+      "id": "TC013",
+      "name": "User registration with non-matching passwords",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/register?returnUrl=%2F",
+        "2. Fill in all required fields with valid data, except for passwords",
+        "3. Enter 'Password123' in the 'Password' field",
+        "4. Enter 'Password456' in the 'ConfirmPassword' field (passwords do not match)",
+        "5. Click the 'REGISTER' button"
+      ],
+      "expected_result": "An error message indicating that the passwords do not match should be displayed (e.g., 'The password and confirmation password do not match.')."
+    },
+    {
+      "id": "TC014",
+      "name": "User registration with an already registered email",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/register?returnUrl=%2F",
+        "2. Fill in all required fields with valid data",
+        "3. Use an email address that is known to be already registered in the system",
+        "4. Enter matching valid passwords",
+        "5. Click the 'REGISTER' button"
+      ],
+      "expected_result": "An error message indicating that the email is already registered should be displayed (e.g., 'The specified email already exists.')."
+    },
+    {
+      "id": "TC015",
+      "name": "Login with invalid credentials",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "equivalence partitioning",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/login?returnUrl=%2F",
+        "2. Enter an unregistered email address (assuming input fields for email/password exist)",
+        "3. Enter an incorrect password",
+        "4. Click the 'LOG IN' button"
+      ],
+      "expected_result": "An error message indicating unsuccessful login should be displayed (e.g., 'Login was unsuccessful. Please check your username and try again.'). The user should not be logged in."
+    },
+    {
+      "id": "TC016",
+      "name": "XSS attempt in search field",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "security testing",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com",
+        "2. Locate the search input field (name: 'q')",
+        "3. Enter an XSS payload (e.g., '<script>alert(\"XSS\")</script>') into the search field",
+        "4. Click the 'SEARCH' button"
+      ],
+      "expected_result": "The XSS payload should not execute. The input should be properly sanitized or encoded, displaying the raw text or an encoded version, preventing script execution."
+    },
+    {
+      "id": "TC017",
+      "name": "SQL Injection attempt in login email field",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "security testing",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/login?returnUrl=%2F",
+        "2. In the email input field (assuming it exists), enter a SQL injection payload (e.g., \"' OR '1'='1\")",
+        "3. Enter any password",
+        "4. Click the 'LOG IN' button"
+      ],
+      "expected_result": "The login should fail. No unauthorized access should be granted, and no database errors or sensitive information should be exposed to the user."
+    },
+    {
+      "id": "TC018",
+      "name": "Attempt to access 'My Account' page while logged out",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "state transition",
+      "steps": [
+        "1. Ensure the user is logged out (clear cookies or log out explicitly if previously logged in)",
+        "2. Directly navigate to the 'My account' URL: https://demo.nopcommerce.com/customer/info"
+      ],
+      "expected_result": "The application should redirect the user to the login page or display an 'Access Denied' message, preventing access to personal account information."
+    },
+    {
+      "id": "TC019",
+      "name": "User registration with password below minimum length",
+      "type": "negative",
+      "priority": "high",
+      "test_technique": "boundary value analysis",
+      "steps": [
+        "1. Navigate to https://demo.nopcommerce.com/register?returnUrl=%2F",
+        "2. Fill in all required fields with valid data",
+        "3. Enter a password shorter than the minimum required length (e.g., '123' if min is 6) in both 'Password' and 'ConfirmPassword' fields",
+        "4. Click the 'REGISTER' button"
+      ],
+      "expected_result": "An error message indicating that the password does not meet the minimum length requirements should be displayed (e.g., 'The password must be at least 6 characters long.')."
+    },
+    {
+      "id": "TC020",
+      "name": "Verify responsive layout on mobile devices",
+      "type": "positive",
+      "priority": "medium",
+      "test_technique": "configuration testing",
+      "steps": [
+        "1. Open https://demo.nopcommerce.com on a mobile device (e.g., iPhone, Android phone)",
+        "2. Alternatively, use browser developer tools to simulate a mobile viewport",
+        "3. Scroll through the homepage and navigate to a few category/product pages",
+        "4. Observe the layout, text readability, and element positioning"
+      ],
+      "expected_result": "The web application's layout should be responsive, adapting correctly to the mobile screen size without horizontal scrolling, overlapping elements, or broken images. All interactive elements should be accessible and functional."
+    }
+  ],
+
+  "metadata": {
+    "generated_at": "2025-12-11 21:59:19",
+    "model_used": "models/gemini-2.5-flash",
+    "ai_generated": true,
+    "rag_enabled": true
+  }
+}
+
+

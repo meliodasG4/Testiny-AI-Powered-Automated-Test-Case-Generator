@@ -1,0 +1,71 @@
+{
+  "suite_name": "responsive_design",
+  "tests": [
+    {
+      "id": "RDT-001",
+      "name": "Homepage Header & Navigation Responsiveness",
+      "description": "Verify the adaptation of the header elements, including the logo, search bar, and main navigation menu, across various screen sizes to ensure proper layout, font scaling, and touch target usability.",
+      "steps": [
+        "Navigate to https://demo.nopcommerce.com.",
+        "Set browser resolution to 1920x1080 (Desktop Large).",
+        "Set browser resolution to 1366x768 (Desktop Medium).",
+        "Set browser resolution to 768x1024 (Tablet Portrait).",
+        "Set browser resolution to 375x667 (Mobile Medium).",
+        "Set browser resolution to 320x568 (Mobile Small)."
+      ],
+      "expected_result": "For 1920x1080 and 1366x768: Logo, search bar ('q' input), and main navigation (e.g., 'Computers', 'Electronics') are clearly visible, well-aligned, and fully functional. Top links ('Register', 'Log in', 'Wishlist (0)', 'Shopping cart (0)') are accessible. Font sizes are appropriate for desktop viewing without truncation.\nFor 768x1024: Main navigation should collapse into a hamburger menu or similar mobile-friendly navigation. The search bar should be visible or accessible via an icon. Top links should be accessible without horizontal scrolling. Font sizes should scale appropriately for tablet readability.\nFor 375x667 and 320x568: Navigation should collapse into a hamburger menu. The search bar should be prominent or easily accessible. Top links should be clearly visible and have sufficient touch target area (at least 44x44px). No horizontal scrolling should occur. Font sizes should be legible and not cause overflow or truncation.",
+      "priority": "high",
+      "suite_type": "responsive_design"
+    },
+    {
+      "id": "RDT-002",
+      "name": "Homepage Product Grid and Call-to-Action Responsiveness",
+      "description": "Verify how product listings (e.g., featured products) and their associated action buttons ('ADD TO CART', 'Add to wishlist') adapt to different screen sizes, ensuring readability, proper layout, and usable touch targets.",
+      "steps": [
+        "Navigate to https://demo.nopcommerce.com.",
+        "Scroll to the 'Featured products' section.",
+        "Set browser resolution to 1920x1080 (Desktop Large).",
+        "Set browser resolution to 1366x768 (Desktop Medium).",
+        "Set browser resolution to 768x1024 (Tablet Portrait).",
+        "Set browser resolution to 375x667 (Mobile Medium).",
+        "Set browser resolution to 320x568 (Mobile Small)."
+      ],
+      "expected_result": "For 1920x1080 and 1366x768: Products are displayed in a multi-column grid (e.g., 4 columns). Product images, names, prices, and action buttons ('ADD TO CART', 'Add to compare list', 'Add to wishlist') are clearly visible and well-spaced. Font sizes are readable.\nFor 768x1024: Product grid should adapt (e.g., 2 columns). Product details and action buttons should be legible and not overlap. 'ADD TO CART' and other buttons should have adequate touch target size (at least 44x44px) for tablet interaction.\nFor 375x667 and 320x568: Product grid should adapt to a single column or a highly condensed two-column layout. Product images should scale down appropriately. Product names and prices should be readable. Action buttons must be large enough for touch interaction (at least 44x44px) and clearly distinguishable, without text truncation or overlapping. No horizontal scrolling should occur. Font sizes should be legible and not cause overflow.",
+      "priority": "high",
+      "suite_type": "responsive_design"
+    },
+    {
+      "id": "RDT-003",
+      "name": "Registration Form Layout and Input Field Responsiveness",
+      "description": "Verify the layout and usability of the registration form fields, including labels, input boxes, radio buttons, and the submit button, across various screen sizes, focusing on layout adaptation, font scaling, and touch targets.",
+      "steps": [
+        "Navigate to https://demo.nopcommerce.com/register?returnUrl=%2F.",
+        "Set browser resolution to 1920x1080 (Desktop Large).",
+        "Set browser resolution to 1366x768 (Desktop Medium).",
+        "Set browser resolution to 768x1024 (Tablet Portrait).",
+        "Set browser resolution to 375x667 (Mobile Medium).",
+        "Set browser resolution to 320x568 (Mobile Small)."
+      ],
+      "expected_result": "For all resolutions:\n- Form fields ('FirstName', 'LastName', 'Email', 'Password', 'ConfirmPassword', 'Company') should be clearly labeled and fully visible.\n- Input fields should maintain appropriate width and height, and not be truncated. Placeholders should be visible.\n- Labels should be correctly associated with their input fields.\n- Radio buttons for 'Gender' and the 'NewsLetterSubscriptions[0].IsActive' checkbox should be easily selectable with sufficient touch target area (at least 44x44px) on smaller screens.\n- The 'REGISTER' button should be prominent, have an adequate touch target size, and be fully visible without horizontal scrolling.\n- Font sizes for labels, input text, and button text should be legible and scale appropriately without causing overflow or truncation.\n- Form elements should stack vertically on smaller screens (e.g., 768x1024 and below) if horizontal space is limited, maintaining a clean and usable layout.",
+      "priority": "high",
+      "suite_type": "responsive_design"
+    },
+    {
+      "id": "RDT-004",
+      "name": "Footer Section Responsiveness",
+      "description": "Verify the layout, readability, and touch target size of footer links and the newsletter subscription section across different screen sizes, ensuring proper adaptation and usability.",
+      "steps": [
+        "Navigate to https://demo.nopcommerce.com.",
+        "Scroll to the footer section.",
+        "Set browser resolution to 1920x1080 (Desktop Large).",
+        "Set browser resolution to 1366x768 (Desktop Medium).",
+        "Set browser resolution to 768x1024 (Tablet Portrait).",
+        "Set browser resolution to 375x667 (Mobile Medium).",
+        "Set browser resolution to 320x568 (Mobile Small)."
+      ],
+      "expected_result": "For 1920x1080 and 1366x768: Footer links (e.g., 'Sitemap', 'Shipping & returns', 'My account', 'Facebook') should be organized into distinct columns. The 'Newsletter' input field ('NewsLetterEmail') and 'SUBSCRIBE' button should be clearly visible. Font sizes for links and text should be readable.\nFor 768x1024: Footer columns should adapt, potentially stacking or reorganizing into fewer columns. Links should remain clickable and legible. The 'Newsletter' input and 'SUBSCRIBE' button should be functional and have adequate touch target sizes (at least 44x44px).\nFor 375x667 and 320x568: Footer sections should stack vertically. All links should be clearly visible, have sufficient spacing, and be large enough for touch interaction (at least 44x44px). The 'Newsletter' input field should be full-width or near full-width, and the 'SUBSCRIBE' button should be easily tappable without horizontal scrolling. Font sizes should be legible and not cause overflow.",
+      "priority": "high",
+      "suite_type": "responsive_design"
+    }
+  ]
+}

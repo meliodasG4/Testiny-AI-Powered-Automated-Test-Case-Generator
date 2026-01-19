@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug Report - NopCommerce Automation Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .passed {
+            color: green;
+            font-weight: bold;
+        }
+        .failed {
+            color: red;
+            font-weight: bold;
+        }
+        .tooltip {
+            position: relative;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .tooltip:hover::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            z-index: 10;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>NopCommerce Automation Test Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Test Name</th>
+                <th>Type</th>
+                <th>Priority</th>
+                <th>Expected Result</th>
+                <th>Actual Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>TC001</td>
+                <td class="tooltip" data-text="Steps:\n1. Navigate to homepage\n2. Search for 'computer'\n3. Click search">Search for a valid product on homepage</td>
+                <td>Positive</td>
+                <td>High</td>
+                <td>Display products related to 'computer'</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC002</td>
+                <td class="tooltip" data-text="Subscribe to newsletter with a valid email">Subscribe to newsletter with a valid email</td>
+                <td>Positive</td>
+                <td>Medium</td>
+                <td>Show newsletter subscription success message</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC003</td>
+                <td class="tooltip" data-text="Register a new user successfully">Successful user registration</td>
+                <td>Positive</td>
+                <td>High</td>
+                <td>User registered successfully</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC004</td>
+                <td class="tooltip" data-text="Navigate to 'Computers' category page">Navigate to a main category page</td>
+                <td>Positive</td>
+                <td>High</td>
+                <td>'Computers' category page loads</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC005</td>
+                <td class="tooltip" data-text="Add a product to shopping cart">Add a product to the shopping cart</td>
+                <td>Positive</td>
+                <td>High</td>
+                <td>Product added to shopping cart</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC010</td>
+                <td class="tooltip" data-text="Add product quantity 999">Add product with quantity exceeding maximum</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error message or handled gracefully</td>
+                <td class="failed">FAILED</td>
+            </tr>
+            <tr>
+                <td>TC011</td>
+                <td class="tooltip" data-text="Add product with extremely large quantity">Add product with extremely large quantity</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error: Quantity should not exceed 10000</td>
+                <td class="failed">FAILED</td>
+            </tr>
+            <tr>
+                <td>TC012</td>
+                <td class="tooltip" data-text="Newsletter subscription invalid email">Newsletter subscription with invalid email format</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error indicating invalid email</td>
+                <td class="failed">FAILED</td>
+            </tr>
+            <tr>
+                <td>TC013</td>
+                <td class="tooltip" data-text="Passwords do not match in registration">User registration with non-matching passwords</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error: Passwords do not match</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC014</td>
+                <td class="tooltip" data-text="Register with already registered email">User registration with an already registered email</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error: Email already registered</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC015</td>
+                <td class="tooltip" data-text="Login with invalid credentials">Login with invalid credentials</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error: Login unsuccessful</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC016</td>
+                <td class="tooltip" data-text="XSS attempt in search field">XSS attempt in search field</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>XSS payload prevented</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC017</td>
+                <td class="tooltip" data-text="SQL injection in login field">SQL Injection attempt in login email field</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Login fails, no unauthorized access</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC018</td>
+                <td class="tooltip" data-text="Access 'My Account' while logged out">Attempt to access 'My Account' page while logged out</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Redirect to login or access denied</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC019</td>
+                <td class="tooltip" data-text="Register with password below minimum length">User registration with password below minimum length</td>
+                <td>Negative</td>
+                <td>High</td>
+                <td>Error: Password too short</td>
+                <td class="passed">PASSED</td>
+            </tr>
+            <tr>
+                <td>TC020</td>
+                <td class="tooltip" data-text="Responsive layout check on mobile viewport">Verify responsive layout on mobile devices</td>
+                <td>Positive</td>
+                <td>Medium</td>
+                <td>Layout adapts correctly to mobile</td>
+                <td class="passed">PASSED</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
